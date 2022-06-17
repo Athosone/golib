@@ -1,0 +1,28 @@
+#!/bin/bash
+set -e
+cd $(dirname $0)/..
+
+PROJECT_DIR=$(pwd)
+BIN_PATH=$1
+URL=$2
+
+function get_tool() {
+  TOOL_NAME=$1
+  TOOL_URL=$2
+  TOOL_DIR=$PROJECT_DIR/bin
+  if [ ! -d $TOOL_DIR ]; then
+    mkdir -p $TOOL_DIR
+  fi
+
+  if [ ! -f $BIN_PATH ]; then
+    GOBIN=$TOOL_DIR go get -u $TOOL_URL
+    GOBIN=$TOOL_DIR go install $TOOL_URL
+  fi
+
+  if [ ! -f $BIN_PATH ]; then
+    echo "Failed to download $BIN_PATH"
+    exit 1
+  fi
+}
+
+get_tool $BIN_PATH $URL

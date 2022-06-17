@@ -1,0 +1,28 @@
+### Get books v1beta2
+curl -i -H "Accept: */*;q=0.2, application/vnd.athosone.book+*;q=1.0; v=v1beta1, application/vnd.athosone.book+yaml; v=v1beta2" \
+-H "Accept-Encoding: gzip" \
+http://localhost:8080/api/books
+
+### Get books price
+curl -i -H "Accept: application/vnd.athosone.book.rating+json;q=0.8; v=v2" \
+-H "Accept-Encoding: gzip" \
+http://localhost:8080/api/books/1/ratings
+
+### Get books
+curl -X GET -H "Accept: application/vnd.athosone.book+xml; v=v2" \
+http://localhost:8080/api/books
+
+
+### Add rating books
+curl -X POST -H "Accept: application/vnd.athosone.book.rating+json; v=v2" \
+-H "Content-Type: */*" \
+http://localhost:8080/api/books/1/ratings
+
+### Get ratings
+curl -X GET -H "Accept: application/vnd.athosone.book.rating+json; v=v2" \
+http://localhost:8080/api/books/1/ratings
+
+### Add book
+curl  -H "Accept: application/vnd.athosone.book+json; v=v2" \
+ http://localhost:8080/api/books
+

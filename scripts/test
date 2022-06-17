@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+# Uncomment this to debug your tests scripts:
+# set -ex
+
+cd $(dirname $0)/..
+
+GINKGO=$1
+TEST_OUTPUT=$(realpath $2)
+
+echo Running tests for libraries
+$GINKGO -r --randomize-all -cover -p -race --output-dir=$TEST_OUTPUT --coverprofile "libraries_unit_coverage.out" --junit-report libraries_unit_report.xml pkg/ &
+
+wait

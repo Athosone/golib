@@ -1,0 +1,25 @@
+{
+  "go.inferGopath": false,
+  "cSpell.words": [
+    "clientcredentials",
+    "configpath",
+    "Fatalw",
+    "fsnotify",
+    "glogger",
+    "gmiddleware",
+    "HATEOAS",
+    "mapstructure",
+    "oidc",
+    "onsi",
+    "Subrouter"
+  ],
+  "go.testFlags": [
+    "-race"
+  ],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json": [
+      ".azuredevops/pr.yaml",
+      ".azuredevops/main.yaml"
+    ]
+  }
+}

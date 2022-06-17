@@ -1,0 +1,5 @@
+servicePrincipal:
+  clientId: "aClientId"
+  clientSecret: "xyz"
+  tenantId: "aTenantId"
+isDebug: true
